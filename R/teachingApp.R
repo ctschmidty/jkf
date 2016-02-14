@@ -6,7 +6,7 @@ teachingApp <- function(name, link = FALSE,...) {
   gitPath <- "C:/Users/Jason/OneDrive/Work-Stuff/Computer Systems/GitHub/teaching-apps"
   gitURL  <- 'https://github.com/Auburngrads/teaching-apps/blob/master'
 
-  if(!link) dump(name, file = paste(c(gitPath, gitFile), collapse = '/'),envir = environment())
+  if(!link) dump(name, file = paste(c(gitPath, gitFile), collapse = '/'), envir = sys.frame())
 
   if( link) paste(c(gitURL, gitFile), collapse = '/')
 
