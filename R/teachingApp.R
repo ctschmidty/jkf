@@ -1,4 +1,4 @@
-teachingApp <- function(name, link = TRUE, envir = NULL, css = TRUE,...) {
+teachingApp <- function(name, link = TRUE, css = TRUE,...) {
 
   if(!is.character(name)) stop('name must be a character string')
 
@@ -6,7 +6,7 @@ teachingApp <- function(name, link = TRUE, envir = NULL, css = TRUE,...) {
   gitPath <- "C:/Users/Jason/OneDrive/Work-Stuff/Computer Systems/GitHub/teaching-apps"
   gitURL  <- 'https://github.com/Auburngrads/teaching-apps/blob/master'
 
-  if(link) { dump(name, file = paste(c(gitPath, gitFile), collapse = '/'),envir = envir,... )
+  if(link) { dump(name, file = paste(c(gitPath, gitFile), collapse = '/'),... )
 
   if(css) {
 
