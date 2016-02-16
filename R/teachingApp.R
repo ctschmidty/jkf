@@ -10,7 +10,7 @@ teachingApp <- function(name, link = TRUE, css = TRUE,...) {
 
   if(css) {
 
-    cat(paste(c("<div style='font-size: 22pt; margin: 0 0 20px 30px; font-weight: normal; border-top: 2px solid #95a5a6; border-bottom: 2px solid #95a5a6;'>View the [code](",
+    cat(paste(c("<div style='font-size: 22pt; margin: 0 0 20px 30px; font-weight: normal;'>View the [code](",
             paste(c(gitURL, gitFile), collapse = '/'),') for this app</div>'), collapse = ''))
   } else {
     paste(c(gitURL, gitFile), collapse = '/')
