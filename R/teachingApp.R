@@ -11,7 +11,7 @@ teachingApp <- function(name, link = FALSE, envir = NULL, css = TRUE,...) {
   if( link) {
     if(css) {
 
-paste(c("<div style='font-size: 21pt; margin: 0 0 0 30px; padding: 0; font-weight: normal;'>View the code for this app [here](",
+paste(c("<div style='font-size: 21pt; margin: 0 0 20px 40px; padding: 0; font-weight: normal;background-color: #e6e6e6; border-style: solid; border-color: #e6e6e6; border-radius: 10px;'>View app code [here](",
                     paste(c(gitURL, gitFile), collapse = '/'),')</div>'), collapse = '')
     } else {
       paste(c(gitURL, gitFile), collapse = '/')
