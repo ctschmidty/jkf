@@ -6,6 +6,6 @@ INFO <- switch(as.character(info),
                'job'  = 'Assistant Professor of Systems Engineering',
                'dept' = 'Department of Systems Engineering and Management')
 
-print(INFO)
+return(INFO)
 
 }
