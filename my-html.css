@@ -1,0 +1,36 @@
+p {
+
+   font-size: 18pt;
+   padding-top: 15px;
+   padding-bottom: 15px;
+
+}
+
+li p {
+
+  padding: 0 0 0 0;
+
+}
+
+
+a {
+
+  font-weight: bold;
+  font-size: 16pt;
+
+}
+
+.container-fluid.main-container {
+
+  max-width: 80%;
+  font-family: 'serif';
+
+}
+
+h1.title {
+
+  padding: 0 0 20px 0 ;
+  font-size: 40pt;
+  font-weight: bold;
+
+}
