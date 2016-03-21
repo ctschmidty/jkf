@@ -18,7 +18,7 @@ if(link & css & !publish) {
 if(publish & css) {
 
   cat(paste(c("<div style='font-size: 22pt; margin: 0 0 20px 30px; font-weight: normal;'>Get the [code](",
-              paste(c(gitURL, gitFile), collapse = '/'),') for this app</div>'), collapse = ''))
+              paste(c(gitURL, gitFile), collapse = '/'),') for this app on GitHub</div>'), collapse = ''))
 
 }
 
