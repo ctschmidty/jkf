@@ -21,6 +21,6 @@ HTML("<script> audiojs.events.ready(function() {audiojs.createAll();}); </script
 HTML("<script src='js/jkf-scroll.js'></script>")
 }})
 
-eval(body(chunk), envir = sys.frame())
+eval(body(chunk), envir = args$envir)
 
 }
