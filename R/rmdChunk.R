@@ -25,6 +25,6 @@ HTML('<script> audiojs.events.ready(function() {audiojs.createAll();}); </script
 HTML('<script src='js/jkf-scroll.js'></script>')
 ```"})
 
-print(noquote(gsub('\n','',chunk)))
+cat(noquote(gsub('\n','',chunk)))
 
 }
