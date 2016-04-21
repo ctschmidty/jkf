@@ -1,12 +1,12 @@
 rmdChunk <-
-  function(type = 'first')  {
+  function(type = 'first', dynamic = TRUE, publish = TRUE,...)  {
 
 chunk <- switch(type,
 
                 'first' = {function() {
 
-assign('dynamic', TRUE,envir = sys.frame(),immediate = TRUE)
-assign('publish', TRUE,envir = sys.frame(),immediate = TRUE)
+assign('dynamic', dynamic,envir = sys.frame(),immediate = TRUE)
+assign('publish', publish,envir = sys.frame(),immediate = TRUE)
 
 library(SMRD)
 library(xtable)
