@@ -5,7 +5,7 @@ chunk <- switch(type,
 
                 'first' = {
 "
-```{r, echo=FALSE,message=FALSE, warning=FALSE}
+```{r, echo=TRUE,message=FALSE, warning=FALSE}
 assign('dynamic', TRUE,envir = sys.frame(),immediate = TRUE)
 assign('publish', TRUE,envir = sys.frame(),immediate = TRUE)
 
@@ -18,7 +18,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE, results = 
 
                 'last'  = {
 "
-```{r, echo=FALSE,message=FALSE, warning=FALSE}
+```{r, echo=TRUE,message=FALSE, warning=FALSE}
 HTML('<link rel='stylesheet' type='text/css' href='css/flat-slidy.css'>')
 HTML('<script src='js/audiojs/audiojs/audio.min.js'></script>')
 HTML('<script> audiojs.events.ready(function() {audiojs.createAll();}); </script>')
