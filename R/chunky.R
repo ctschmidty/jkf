@@ -67,7 +67,7 @@ shinyApp(options = list(height = "600px"),
 teachingApp('ace_name', envir = environment(), publish = publish)
 }})
 
-if(tolower(type)%in%c('first','last','vignette'))  chunk()
+if(tolower(type)%in%c('first','last','vignette'))  cat(chunk())
 if(tolower(type)%in%c('shinyace','navbar'))        chunk
 
 }
