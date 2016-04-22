@@ -16,10 +16,10 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE, results = 
 
                 'last'  = {function() {
 
-shiny::HTML("<link rel='stylesheet' type='text/css' href='css/flat-slidy.css'>
+shiny::HTML(gsub('\n','',"<link rel='stylesheet' type='text/css' href='css/flat-slidy.css'>
 <script src='js/audiojs/audiojs/audio.min.js'></script>
 <script> audiojs.events.ready(function() {audiojs.createAll();}); </script>
-<script src='js/jkf-scroll.js'></script>")}},
+<script src='js/jkf-scroll.js'></script>"))}},
 
 
                 'vignette'  = {function() {
@@ -70,7 +70,7 @@ shinyApp(options = list(height = "600px"),
 teachingApp('ace_name', envir = environment(), publish = publish)
 }})
 
-if(tolower(type)%in%c('first','last','vignette'))  gsub('\n','',chunk())
+if(tolower(type)%in%c('first','last','vignette'))  chunk()
 if(tolower(type)%in%c('shinyace','navbar'))        chunk
 
 }
