@@ -1,9 +1,10 @@
 chunky <-
   function(type = 'first', dynamic = TRUE, publish = TRUE,fw = 6, fh = 4,...)  {
 
-chunk <- switch(tolower(type),
+switch(type,
 
-                'first' = {function() {
+                'first' = {
+first <- function() {
 
 assign('dynamic', dynamic,envir = sys.frame(),immediate = TRUE)
 assign('publish', publish,envir = sys.frame(),immediate = TRUE)
@@ -12,14 +13,21 @@ library(SMRD)
 library(xtable)
 library(jkf)
 
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE, results = 'asis',...)}},
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE, results = 'asis',...)}
+first()
+},
 
-                'last'  = {function() {
+'last'  = {
 
-shiny::HTML("<link rel='stylesheet' type='text/css' href='css/flat-slidy.css'><script src='js/audiojs/audiojs/audio.min.js'></script><script> audiojs.events.ready(function() {audiojs.createAll();}); </script><script src='js/jkf-scroll.js'></script>")}},
+last <- function() {
 
+shiny::HTML("<link rel='stylesheet' type='text/css' href='css/flat-slidy.css'><script src='js/audiojs/audiojs/audio.min.js'></script><script> audiojs.events.ready(function() {audiojs.createAll();}); </script><script src='js/jkf-scroll.js'></script>")}
+last()
+},
 
-                'vignette'  = {function() {
+'vign'  = {
+
+vignette <-  function() {
 
 knitr::opts_chunk$set(message = FALSE,
                       warning = FALSE,
@@ -27,13 +35,13 @@ knitr::opts_chunk$set(message = FALSE,
                       fig.width = fw,
                       fig.height = fh,
                       comment = NA,...)
-library(SMRD)
-}},
+library(SMRD)}
+vign()
+},
 
+'shinyace'  = {
 
-                 'shinyace'  = {
-
-function() {
+shace <- function() {
 
 ace_name <- function(...) {
 
@@ -65,10 +73,12 @@ shinyApp(options = list(height = "600px"),
 })
 } ; ace_name()
 teachingApp('ace_name', envir = environment(), publish = publish)
-}})
+}
+shace()
+})
 
-if(tolower(type)%in%c('first','last','vignette'))  eval(chunk())
-if(tolower(type)%in%c('shinyace','navbar'))        chunk
+#if(type%in%c('first','last','vignette'))  chunk()
+#if(type%in%c('shinyace','navbar'))        chunk
 
 }
 
