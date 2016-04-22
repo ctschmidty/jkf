@@ -1,5 +1,5 @@
 chunky <-
-  function(type = 'first', dynamic = TRUE, publish = TRUE,fw = 6, fh = 4,name = NULL,...)  {
+  function(type = 'first', dynamic = TRUE, publish = TRUE,fw = 6, fh = 4,...)  {
 
 chunk <- switch(tolower(type),
 
@@ -36,8 +36,6 @@ library(SMRD)
 
 
                  'shinyace'  = {
-
-if(is.null(name)) stop('`name` must be specified for type = shinyace')
 
 function() {
 

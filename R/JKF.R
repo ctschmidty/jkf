@@ -1,6 +1,6 @@
 JKF <- function(...) {
 
-  devtools::install_github('Auburngrads/JKF',...)
+  devtools::install_github('Auburngrads/jkf',...)
 
 
 }
