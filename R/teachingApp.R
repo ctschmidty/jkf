@@ -3,8 +3,8 @@ teachingApp <- function(name, link = TRUE, css = TRUE, publish = FALSE,...) {
   if(!is.character(name)) stop('name must be a character string')
 
   gitFile <- paste(c(name,'.R'), collapse = '')
-  gitPath <- "C:/Users/Jason/OneDrive/Work-Stuff/Computer Systems/GitHub/teachingApps"
-  gitURL  <- 'https://github.com/Auburngrads/teachingApps/blob/master'
+  gitPath <- "C:/Users/Jason/OneDrive/Work-Stuff/Computer Systems/GitHub/teachingApps/R"
+  gitURL  <- 'https://github.com/Auburngrads/teachingApps/blob/master/R'
 
 if(link & css & !publish) {
 
