@@ -13,21 +13,34 @@ library(SMRD)
 library(xtable)
 library(jkf)
 
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE, results = 'asis',...)
-knitr::knit_hooks$set(par=function(before, options, envir){
-  if (before && options$fig.show!='none')
-    par(mar=c(4,4,.1,.1),cex.lab=1.05,cex.axis=1.05,mgp=c(2.25,.7,0),tcl=-.3,
-        font.lab=2,font=2,font.axis=2,las=1,tck=0.015,family='serif')
-})}
-first()
+knitr::opts_chunk$set(message = FALSE,
+                      warning = FALSE,
+                      echo = FALSE,
+                      results = 'asis',
+                      jkf_par = TRUE,...)
+knitr::knit_hooks$set(
+  jkf_par=function(before, options, envir){
+
+  if (before) { par(cex.lab=1.05,
+                    cex.axis=1.05,
+                    mgp=c(2.25,.7,0),
+                    tcl=-.3,
+                    font.lab=2,
+                    font=2,
+                    font.axis=2,
+                    las=1,
+                    tck=0.015,
+                    family='serif')}
+})
+} ; first()
 },
 
 'last'  = {
 
 last <- function() {
 
-shiny::HTML("<link rel='stylesheet' type='text/css' href='css/flat-slidy.css'><script src='js/audiojs/audiojs/audio.min.js'></script><script> audiojs.events.ready(function() {audiojs.createAll();}); </script><script src='js/jkf-scroll.js'></script>")}
-last()
+shiny::HTML("<link rel='stylesheet' type='text/css' href='css/flat-slidy.css'><script src='js/audiojs/audiojs/audio.min.js'></script><script> audiojs.events.ready(function() {audiojs.createAll();}); </script><script src='js/jkf-scroll.js'></script>")
+} ; last()
 },
 
 'vign'  = {
@@ -40,8 +53,8 @@ knitr::opts_chunk$set(message = FALSE,
                       fig.width = fw,
                       fig.height = fh,
                       comment = NA,...)
-library(SMRD)}
-vign()
+library(SMRD)
+} ; vign()
 },
 
 'shinyace'  = {
