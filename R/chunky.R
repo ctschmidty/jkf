@@ -13,7 +13,12 @@ library(SMRD)
 library(xtable)
 library(jkf)
 
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE, results = 'asis',...)}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE, results = 'asis',...)
+knit_hooks$set(par=function(before, options, envir){
+  if (before && options$fig.show!='none')
+    par(mar=c(4,4,.1,.1),cex.lab=1.05,cex.axis=1.05,mgp=c(2.25,.7,0),tcl=-.3,
+        font.lab=2,font=2,font.axis=2,las=1,tck=0.015,family='serif')
+})}
 first()
 },
 
