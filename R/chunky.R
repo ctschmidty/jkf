@@ -39,7 +39,7 @@ knitr::knit_hooks$set(
 
 last <- function() {
 
-shiny::HTML("<link rel='stylesheet' type='text/css' href='css/flat-slidy.css'><script src='js/audiojs/audiojs/audio.min.js'></script><script> audiojs.events.ready(function() {audiojs.createAll();}); </script><script src='js/jkf-scroll.js'></script>")
+shiny::HTML("<link rel='stylesheet' type='text/css' href='../css/flat-slidy.css'><script src='../js/audiojs/audiojs/audio.min.js'></script><script> audiojs.events.ready(function() {audiojs.createAll();}); </script><script src='../js/jkf-scroll.js'></script>")
 } ; last()
 },
 
