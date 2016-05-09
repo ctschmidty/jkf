@@ -9,9 +9,9 @@ first <- function() {
 assign('dynamic', dynamic,envir = sys.frame(),immediate = TRUE)
 assign('publish', publish,envir = sys.frame(),immediate = TRUE)
 
-library(SMRD)
-library(xtable)
-library(jkf)
+require(SMRD)
+require(xtable)
+require(jkf)
 
 knitr::opts_chunk$set(message = FALSE,
                       warning = FALSE,
@@ -53,7 +53,7 @@ knitr::opts_chunk$set(message = FALSE,
                       fig.width = fw,
                       fig.height = fh,
                       comment = NA,...)
-library(SMRD)
+require(SMRD)
 } ; vign()
 },
 
@@ -63,7 +63,7 @@ shace <- function() {
 
 ace_name <- function(...) {
 
-library(shiny)
+require(shiny)
 
 shinyApp(options = list(height = "600px"),
    ui = fluidPage(theme = shinythemes::shinytheme("flatly"),
