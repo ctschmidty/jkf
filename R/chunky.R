@@ -1,17 +1,17 @@
 chunky <-
-  function(type = 'first', dynamic = TRUE, publish = TRUE,fw = 6, fh = 4,...)  {
+  function(type = 'first', dynamic = TRUE, publish = TRUE, envir, fw = 6, fh = 4,...)  {
 
 switch(type,
 
                 'first' = {
 first <- function() {
 
-assign('dynamic', dynamic,envir = sys.frame(),immediate = TRUE)
-assign('publish', publish,envir = sys.frame(),immediate = TRUE)
+assign('dynamic', dynamic,envir = envir,immediate = TRUE)
+assign('publish', publish,envir = envir,immediate = TRUE)
 
-require(SMRD)
-require(xtable)
-require(jkf)
+if(!isNamespaceLoaded('SMRD')) attachNamespace('SMRD')
+if(!isNamespaceLoaded('xtable')) attachNamespace('xtable')
+if(!isNamespaceLoaded('jkf')) attachNamespace('jkf')
 
 knitr::opts_chunk$set(message = FALSE,
                       warning = FALSE,
