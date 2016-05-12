@@ -1,60 +1,14 @@
 chunky <-
   function(type = 'first', dynamic = TRUE, publish = TRUE, envir, fw = 6, fh = 4,...)  {
 
-switch(type,
+switch(type, 'first' = {
 
-                'first' = {
 first <- function() {
 
 assign('dynamic', dynamic,envir = envir,immediate = TRUE)
 assign('publish', publish,envir = envir,immediate = TRUE)
 
-if(!isNamespaceLoaded('SMRD')) attachNamespace('SMRD')
-if(!isNamespaceLoaded('xtable')) attachNamespace('xtable')
-if(!isNamespaceLoaded('jkf')) attachNamespace('jkf')
-
-knitr::opts_chunk$set(message = FALSE,
-                      warning = FALSE,
-                      echo = FALSE,
-                      results = 'asis',
-                      jkf_par = TRUE,...)
-knitr::knit_hooks$set(
-  jkf_par=function(before, options, envir){
-
-  if (before) { par(cex.lab=1.05,
-                    cex.axis=1.05,
-                    mgp=c(2.25,.7,0),
-                    tcl=-.3,
-                    font.lab=2,
-                    font=2,
-                    font.axis=2,
-                    las=1,
-                    tck=0.015,
-                    family='serif')}
-})
 } ; first()
-},
-
-'last'  = {
-
-last <- function() {
-
-shiny::HTML("<link rel='stylesheet' type='text/css' href='../css/flat-slidy.css'><script src='../js/audiojs/audiojs/audio.min.js'></script><script> audiojs.events.ready(function() {audiojs.createAll();}); </script><script src='../js/jkf-scroll.js'></script>")
-} ; last()
-},
-
-'vign'  = {
-
-vignette <-  function() {
-
-knitr::opts_chunk$set(message = FALSE,
-                      warning = FALSE,
-                      fig.align = 'center',
-                      fig.width = fw,
-                      fig.height = fh,
-                      comment = NA,...)
-require(SMRD)
-} ; vign()
 },
 
 'shinyace'  = {
@@ -63,7 +17,7 @@ shace <- function() {
 
 ace_name <- function(...) {
 
-require(shiny)
+if(!isNamespaceLoaded('shiny')) attachNamespace('shiny')
 
 shinyApp(options = list(height = "600px"),
    ui = fluidPage(theme = shinythemes::shinytheme("flatly"),
@@ -91,8 +45,7 @@ shinyApp(options = list(height = "600px"),
 })
 } ; ace_name()
 teachingApp('ace_name', envir = environment(), publish = publish)
-}
-shace()
+} ; shace()
 })
 
 #if(type%in%c('first','last','vignette'))  chunk()

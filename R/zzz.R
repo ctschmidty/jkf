@@ -1,6 +1,5 @@
 .onLoad <- function(libname, pkgname){
 
-  .github.directory <- 'J:/github-packages'
 }
 
 jkf.par <- function(...) {

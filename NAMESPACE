@@ -1,1 +1,4 @@
-exportPattern("^[[:alpha:]]+")
+import(shiny)
+importFrom(shinyAce, aceEditor)
+importFrom(shinythemes, shinytheme)
+importFrom(devtools, install_github, install)
