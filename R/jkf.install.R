@@ -4,6 +4,8 @@ jkf.install <- function(package = 'jkf',...) {
 
   pkg <- paste(c('Auburngrads',package), collapse = '/')
 
-  devtools::install_github(pkg,auth_token = Sys.getenv('git.token'),...)
+  ifelse(pkg=='Auburngrads/SMRD',
+         devtools::install_github(pkg,auth_token = Sys.getenv('git.token'),...),
+         devtools::install_github(pkg,...))
 
 }
