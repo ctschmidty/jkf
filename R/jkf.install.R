@@ -1,3 +1,11 @@
+#' Install my personal packages
+#'
+#' @param package Name of the package to be installed
+#' @param ...  Additional options for install_github
+#'
+#'
+#' @importFrom devtools install_github
+
 jkf.install <- function(package = 'jkf',...) {
 
   #if(!package%in%c('jkf','teachingApps','SMRD')) stop('Uh...this is not one of your packages')

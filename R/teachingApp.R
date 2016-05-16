@@ -1,6 +1,10 @@
 #' Create a signature for a shiny app
 #'
-#'
+#' @param name name of app as a function
+#' @param link should a link be printed
+#' @param css is there a css file
+#' @param publish should the app be published?
+#' @param ... more commands
 #'
 #'
 #' @export

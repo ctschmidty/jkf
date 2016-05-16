@@ -1,5 +1,19 @@
+#' Prespecified chunks for Rmarkdown documents
+#'
+#' @param type Type of chunk to be used
+#' @param dynamic should shiny objects be included?
+#' @param publish should the shiny object be sent
+#' @param envir What environment is the funtion operating in?
+#' @param fw figure width
+#' @param fh figure height
+#'
+#' @importFrom shinyAce aceEditor
+#' @importFrom shinythemes shinytheme
+#' @importFrom shiny shinyApp fluidPage sidebarLayout actionButton h4
+#' mainPanel sidebarPanel includeCSS isolate renderPlot plotOutput h2
+
 chunky <-
-  function(type = 'first', dynamic = TRUE, publish = TRUE, envir, fw = 6, fh = 4,...)  {
+  function(type = 'first', dynamic = TRUE, publish = TRUE, envir, fw = 6, fh = 4)  {
 
 switch(type, 'first' = {
 
