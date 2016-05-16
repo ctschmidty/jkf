@@ -1,4 +1,11 @@
-teachingApp <- function(name, link = TRUE, css = TRUE, publish = FALSE,...) {
+#' Create a signature for a shiny app
+#'
+#'
+#'
+#'
+#' @export
+
+teachingApp <- function(name, link = TRUE, css = TRUE, publish = TRUE,...) {
 
   if(!is.character(name)) stop('name must be a character string')
 

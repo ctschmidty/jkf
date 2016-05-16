@@ -1,3 +1,4 @@
+export(teachingApp)
 import(shiny)
 importFrom(shinyAce, aceEditor)
 importFrom(shinythemes, shinytheme)
