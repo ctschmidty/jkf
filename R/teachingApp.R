@@ -7,7 +7,6 @@
 #' @param ... more commands
 #'
 #'
-#' @export
 
 teachingApp <- function(name, link = TRUE, css = TRUE, publish = TRUE,...) {
 
