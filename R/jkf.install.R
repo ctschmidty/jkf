@@ -12,7 +12,7 @@ jkf.install <- function(package = 'jkf',...) {
 
   pkg <- paste(c('Auburngrads',package), collapse = '/')
 
-  ifelse(pkg=='Auburngrads/SMRD',
+  ifelse(pkg%in%c('Auburngrads/SMRD','Auburngrads/teachingApps'),
          devtools::install_github(pkg,auth_token = Sys.getenv('git.token'),...),
          devtools::install_github(pkg,...))
 
