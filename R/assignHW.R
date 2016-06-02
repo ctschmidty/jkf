@@ -1,5 +1,5 @@
 assignHW <-
-  function(course = NULL, assignment = NULL, term = NULL, year = NULL, type = NULL,...) {
+  function(course = NA, assignment = NULL, term = NULL, year = NULL, type = NULL,...) {
 
 oldStub <- 'C:/Users/Jason/OneDrive/Work-Stuff/Computer Systems/GitHub/teachingMaterials/assignments/'
 
